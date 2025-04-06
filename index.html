@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Verde</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="title-container">
+                <h1>Agenda Cwazy Vro
+                </h1>
+                <div class="header-image" id="header-image"></div>
+            </div>
+            <nav>
+                <button id="new-event">Novo Evento</button>
+                <button id="about">Sobre</button>
+                <button id="theme-toggle">Modo Escuro</button>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="search-event" placeholder="Buscar eventos...">
+                <div class="search-results" id="search-results"></div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main>
+            <section class="calendar-section">
+                <div class="month">
+                    <button id="prev-month" class="month-btn">←</button>
+                    <h2 id="current-month">Março 2025</h2>
+                    <button id="next-month" class="month-btn">→</button>
+                    <select id="year-select"></select>
+                    <select id="month-select">
+                        <option value="0">Janeiro</option><option value="1">Fevereiro</option><option value="2">Março</option>
+                        <option value="3">Abril</option><option value="4">Maio</option><option value="5">Junho</option>
+                        <option value="6">Julho</option><option value="7">Agosto</option><option value="8">Setembro</option>
+                        <option value="9">Outubro</option><option value="10">Novembro</option><option value="11">Dezembro</option>
+                    </select>
+                </div>
+                <div class="days-header">
+                    <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+                </div>
+                <div class="days" id="days"></div>
+            </section>
+            <section class="event-section">
+                <div class="event-form" id="event-form">
+                    <h3>Adicionar Evento</h3>
+                    <input type="date" id="event-date">
+                    <input type="time" id="event-time">
+                    <input type="text" id="event-desc" placeholder="Descrição do evento">
+                    <input type="text" id="event-category" list="category-list" placeholder="Categoria (ex.: Casamento)">
+                    <datalist id="category-list">
+                        <option value="Estudo">
+                        <option value="Lazer">
+                        <option value="Trabalho">
+                    </datalist>
+                    <input type="color" id="event-color" value="#27ae60">
+                    <div class="emoji-picker">
+                        <input type="text" id="event-emoji" placeholder="Emoji" maxlength="2" readonly>
+                        <div class="emoji-options" id="emoji-options" style="display: none;">
+                            <span class="emoji-option">🎉</span>
+                            <span class="emoji-option">📚</span>
+                            <span class="emoji-option">💼</span>
+                            <span class="emoji-option">🏡</span>
+                            <span class="emoji-option">❤️</span>
+                        </div>
+                    </div>
+                    <button id="add-event">Salvar</button>
+                </div>
+                <div class="event-categories" id="event-categories"></div>
+                <div class="events-list">
+                    <h3>Eventos</h3>
+                    <ul id="event-list"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
